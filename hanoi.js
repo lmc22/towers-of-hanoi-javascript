@@ -68,6 +68,12 @@ class Hanoi {
     }
   }
 
+
+  print() {
+    console.log(this.stacks);
+    // console.log(JSON.stringify(this.stacks));
+  }
+
 }
 
 let game = new Hanoi([[3, 2, 1], [], []]);
