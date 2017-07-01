@@ -78,6 +78,7 @@ class Hanoi {
 
       if (this.gameWon()) {
         completionCallback();
+        reader.close();
       } else {
         this.run(completionCallback);
       }
