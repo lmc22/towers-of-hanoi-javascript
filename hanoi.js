@@ -75,9 +75,15 @@ class Hanoi {
   run(completionCallback) {
     this.promptMove( (startIdx, endIdx) => {
       this.move(startIdx, endIdx);
+
+      if (this.gameWon()) {
+        completionCallback();
+      } else {
+        this.run(completionCallback);
+      }
     });
   }
 }
 
 let game = new Hanoi([[3, 2, 1], [], []]);
-game.run();
+game.run( () => console.log("Game Complete!"));
