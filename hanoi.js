@@ -74,6 +74,14 @@ class Hanoi {
     // console.log(JSON.stringify(this.stacks));
   }
 
+  gameWon() {
+    for (let i = 1; i < this.stacks.length; i++) {
+      if (this.stacks[i].length === 3) {
+        return true;
+      }
+    }
+  }
+
 }
 
 let game = new Hanoi([[3, 2, 1], [], []]);
