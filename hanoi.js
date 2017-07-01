@@ -30,6 +30,32 @@ class Hanoi {
     });
   }
 
+  isValidMove(startTowerIdx, endTowerIdx) {
+    //  if the disc in the starting position is smaller than the disc in the
+    //  ending position, it is a valid move.
+    console.log(
+      `Starting Tower: ${startTowerIdx}\nEnding Tower: ${endTowerIdx}`
+    );
+    const stack = this.stacks,
+          startLast = stack[startTowerIdx].length-1,
+          endLast = stack[endTowerIdx].length-1;
+
+    // let startTop = (startStack === undefined) ? 0 : startStack,
+    //     endTop = (endStack === undefined) ? 0 : endStack,
+    //     validity = (startTop > endTop);
+    console.log(startLast);
+    console.log(endLast);
+
+    let startTop = stack[startTowerIdx][startLast],
+        endTop = stack[endTowerIdx][endLast],
+        validity = (startTop > endTop) ? false : true;
+
+    console.log(startTop);
+    console.log(endTop);
+    console.log(`Valid move? ${validity}`);
+    return validity;
+  }
+
 }
 
 let game = new Hanoi([[3, 2, 1], [], []]);
