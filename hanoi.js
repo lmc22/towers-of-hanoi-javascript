@@ -56,6 +56,18 @@ class Hanoi {
     return validity;
   }
 
+
+  move(startTowerIdx, endTowerIdx) {
+    if (this.isValidMove(startTowerIdx, endTowerIdx)) {
+      let moveDisc = this.stacks[startTowerIdx].pop();
+      this.stacks[endTowerIdx].push(moveDisc);
+      this.print();
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }
 
 let game = new Hanoi([[3, 2, 1], [], []]);
